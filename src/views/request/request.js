@@ -1,6 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 
+export const axiosTest = (url) => {
+    return axios.get(url)
+        .then(function (response) {
+            return response.data;
+        })
+        .catch(function (error) {
+            return error;
+        });
+}
+
+
 class Request extends React.Component {
     constructor(props) {
         super(props);
@@ -58,15 +69,19 @@ class Request extends React.Component {
     }
 
     render() {
+        if (this.state.loading) {
+            this.renderLoading()
+        } else {
+            console.log(this.state.posts);
+            this.renderPosts()
+        }
+
         return (
             <div>
                 {this.state.posts.map(
-                    client => <h1 key={eval(this.props.elements[0])}> { this.props.elements.map(o => eval(o) + "\n") } </h1>
+                    client => <div key={eval(this.props.elements[0])}> { this.props.elements.map(o => eval(o) + "\n") } </div>
                 )}
 
-                {this.state.loading ?
-                    this.renderLoading()
-                    : this.renderPosts()}
             </div>
         );
     }

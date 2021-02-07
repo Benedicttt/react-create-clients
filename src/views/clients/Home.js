@@ -65,22 +65,24 @@ class Home extends React.Component {
         );
     }
 
-    render() {
-        return (
-            <div>
-                <h1>{`/r/${this.props.subreddit}`}</h1>
-                {this.state.loading ?
-                    this.renderLoading()
-                    : this.renderPosts()}
-            </div>
-        );
-    }
+    // render() {
+    //     return (
+    //         <div>
+    //             {this.state.posts.map(post =>
+    //                 <h1 key={post.id}>{post.id} - {post.type_client}</h1>
+    //             )}
+    //
+    //             {this.state.loading ?
+    //                 this.renderLoading()
+    //                 : this.renderPosts()}
+    //         </div>
+    //     );
+    // }
 }
 
-// Change the subreddit to anything you like
-ReactDOM.render(
-    <FetchDemo subreddit="reactjs"/>,
-    document.getElementById('root')
-);
+// ReactDOM.render(
+//     <Home subreddit="reactjs"/>,
+//     document.getElementById('root')
+// );
 
 export default Home

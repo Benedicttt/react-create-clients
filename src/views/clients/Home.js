@@ -1,30 +1,67 @@
 import React from 'react';
-import Request from "../request/request";
-import axios from 'axios';
-import { axiosTest} from "../request/request";
 
-let url='http://localhost:3003/api/v1/all_clients'
+let url='http://localhost:3003/api/v1/all_clients';
 
 export default class Home extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            clouds:[]
+        }
+    }
+
+    componentDidMount() {
+        fetch(url)
+            .then(response => {
+                return response.json()
+
+            }).then(d => {
+
+            let clouds = d.map((cloudData)=>{
+                return({cloudData})
+            })
+
+            this.setState({clouds: clouds});
+
+            console.log("state");
+            console.log("state", this.state.clouds)
+        })
+    }
 
     render() {
-
-        axiosTest(url).then( function(result) {
-            result.list.map( client => console.log( client.id + ' ' + client.type_client + ' ' + client.full_name ))
-        });
-
         return (
             <div>
-                <div>
+                <table>
+                    <td>
+                        <th>
+                            ID
+                        </th>
 
-                    {/*<Request*/}
-                        {/*url='http://localhost:3003/api/v1/all_clients'*/}
-                        {/*elements =  {["client.id", "client.type_client"]} />;*/}
+                        <th>
+                            Type
+                        </th>
+                    </td>
 
-                </div>
+
+                {
+                    this.state.clouds.map((cloud =>
+                            <tr>
+                                <th>
+                                    {cloud.cloudData.id}
+                                </th>
+
+                                <th>
+                                    {cloud.cloudData.type_client}
+                                </th>
+                            </tr>
+                    ))
+                }
+                </table>
             </div>
-
         );
-
     }
+
 }
+
+

@@ -1,8 +1,8 @@
 import React from 'react';
 
-let url='http://localhost:3003/api/v1/organization?client_id=300';
+let url='http://localhost:3000/api/v1/organization?client_id=300';
 
-export default class OnceOrg extends React.Component {
+export default class Organization extends React.Component {
     constructor(props) {
         super(props);
 

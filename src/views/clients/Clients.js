@@ -1,6 +1,7 @@
 import React from 'react';
+import SideBar from "../helpers/sideBar";
 
-let url='http://localhost:3003/api/v1/all_clients';
+let url='http://localhost:3000/api/v1/all_clients';
 
 export default class Clients extends React.Component {
     constructor(props) {
@@ -31,34 +32,47 @@ export default class Clients extends React.Component {
 
     render() {
         return (
+
             <div>
-                <table>
-                    <td>
-                        <th>
-                            ID
-                        </th>
+                <SideBar />
 
-                        <th>
-                            Type
-                        </th>
-                    </td>
+                {/*<table>*/}
+                    {/*<td >*/}
+                        {/*<th>*/}
+                            {/*ID*/}
+                        {/*</th>*/}
+                    {/*</td>*/}
 
+                    {/*<td >*/}
+                        {/*<th>*/}
+                            {/*Type*/}
+                        {/*</th>*/}
+                    {/*</td>*/}
+                {/*</table>*/}
 
-                {
-                    this.state.clouds.map((cloud =>
-                            <tr>
-                                <th>
-                                    {cloud.cloudData.id}
-                                </th>
+                {/*<tbody>*/}
+                    {/*{*/}
+                        {/*this.state.clouds.map((cloud =>*/}
+                                {/*<tr key={cloud.cloudData.id}>*/}
+                                    {/*<th key={cloud.cloudData.id}>*/}
+                                        {/*<div>*/}
+                                            {/*{cloud.cloudData.id}*/}
+                                        {/*</div>*/}
+                                    {/*</th>*/}
 
-                                <th>
-                                    {cloud.cloudData.type_client}
-                                </th>
-                            </tr>
-                    ))
-                }
-                </table>
+                                    {/*<th key={cloud.cloudData.type_client}>*/}
+                                        {/*<div>*/}
+                                            {/*{cloud.cloudData.type_client}*/}
+                                        {/*</div>*/}
+                                    {/*</th>*/}
+                                {/*</tr>*/}
+                        {/*))*/}
+                    {/*}*/}
+                {/*</tbody>*/}
+
             </div>
+
+
         );
     }
 

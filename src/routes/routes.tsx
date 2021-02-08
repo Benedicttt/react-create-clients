@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 import About from "../views/clients/About";
-import OnceOrg from "../views/clients/Organization";
 import Clients from "../views/clients/Clients";
+import Organization from "../views/clients/Organization";
 
 export default function PagesRoutes() {
     return (
@@ -33,8 +33,8 @@ export default function PagesRoutes() {
                     <Route path="/about">
                         <About />
                     </Route>
-                    <Route path="/users">
-                        <OnceOrg />
+                    <Route path="/organizations">
+                        <Organization />
                     </Route>
                 </Switch>
             </div>

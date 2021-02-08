@@ -6,22 +6,35 @@ import {
 } from "react-router-dom";
 
 import About from "../views/clients/About";
-import Users from "../views/clients/Users";
-import Home from "../views/clients/Home";
+import OnceOrg from "../views/clients/Organization";
+import Clients from "../views/clients/Clients";
 
 export default function PagesRoutes() {
     return (
         <Router>
             <div>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/clients">Clients</Link>
+                </li>
+                <li>
+                    <Link to="/organizations">Organization</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+
                 <Switch>
-                    <Route path="/home">
-                        <Home />
+                    <Route exact path="/clients">
+                        <Clients />
                     </Route>
                     <Route path="/about">
                         <About />
                     </Route>
                     <Route path="/users">
-                        <Users />
+                        <OnceOrg />
                     </Route>
                 </Switch>
             </div>

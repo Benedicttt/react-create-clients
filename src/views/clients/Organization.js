@@ -1,8 +1,8 @@
 import React from 'react';
 
-let url='http://localhost:3003/api/v1/all_clients';
+let url='http://localhost:3003/api/v1/organization?client_id=300';
 
-export default class Home extends React.Component {
+export default class OnceOrg extends React.Component {
     constructor(props) {
         super(props);
 
@@ -44,19 +44,19 @@ export default class Home extends React.Component {
                     </td>
 
 
-                {
-                    this.state.clouds.map((cloud =>
-                            <tr>
-                                <th>
-                                    {cloud.cloudData.id}
-                                </th>
+                    {
+                        this.state.clouds.map((cloud =>
+                                <tr>
+                                    <th>
+                                        {cloud.cloudData.id}
+                                    </th>
 
-                                <th>
-                                    {cloud.cloudData.type_client}
-                                </th>
-                            </tr>
-                    ))
-                }
+                                    <th>
+                                        {cloud.cloudData.type_client}
+                                    </th>
+                                </tr>
+                        ))
+                    }
                 </table>
             </div>
         );

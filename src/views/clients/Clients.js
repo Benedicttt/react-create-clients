@@ -36,39 +36,37 @@ export default class Clients extends React.Component {
             <div>
                 <SideBar />
 
-                {/*<table>*/}
-                    {/*<td >*/}
-                        {/*<th>*/}
-                            {/*ID*/}
-                        {/*</th>*/}
-                    {/*</td>*/}
+                <table>
+                    <thead>
+                    <tr >
+                        <th>
+                            ID
+                        </th>
+                    </tr>
 
-                    {/*<td >*/}
-                        {/*<th>*/}
-                            {/*Type*/}
-                        {/*</th>*/}
-                    {/*</td>*/}
-                {/*</table>*/}
+                    <tr >
+                        <th>
+                            Type
+                        </th>
+                    </tr>
+                    </thead>
 
-                {/*<tbody>*/}
-                    {/*{*/}
-                        {/*this.state.clouds.map((cloud =>*/}
-                                {/*<tr key={cloud.cloudData.id}>*/}
-                                    {/*<th key={cloud.cloudData.id}>*/}
-                                        {/*<div>*/}
-                                            {/*{cloud.cloudData.id}*/}
-                                        {/*</div>*/}
-                                    {/*</th>*/}
+                    <tbody>
+                        {
+                            this.state.clouds.map((cloud =>
+                                    <tr id={cloud.cloudData.id} key={cloud.cloudData.id}>
+                                        <td key={cloud.cloudData.id}>
+                                            {cloud.cloudData.id}
+                                        </td>
 
-                                    {/*<th key={cloud.cloudData.type_client}>*/}
-                                        {/*<div>*/}
-                                            {/*{cloud.cloudData.type_client}*/}
-                                        {/*</div>*/}
-                                    {/*</th>*/}
-                                {/*</tr>*/}
-                        {/*))*/}
-                    {/*}*/}
-                {/*</tbody>*/}
+                                        <td id={cloud.cloudData.type_client} key={cloud.cloudData.type_client} >
+                                            {cloud.cloudData.type_client}
+                                        </td>
+                                    </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
 
             </div>
 

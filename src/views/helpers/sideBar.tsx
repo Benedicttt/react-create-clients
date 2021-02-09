@@ -7,20 +7,20 @@ import Sidebar from "arui-feather/sidebar";
 export default class SideBar extends React.Component<any,any> {
     state = { isOpen: false }
 
-    bar= () =>  {
+    handleToggleSidebar= () =>  {
         this.setState(
-            { isOpen: !this.state }
-        );
+            { isOpen: !this.state.isOpen
+        });
 
         console.log(this.state.isOpen)
-    }
+    };
 
     render () {
         return <div>
-            <Button onClick={this.bar.bind(this)}>Выписка по счёту</Button>
+            <Button onClick={this.handleToggleSidebar}>Выписка по счёту</Button>
             <Sidebar
                 visible={this.state.isOpen}
-                onCloserClick={this.bar.bind(this)}
+                onCloserClick={this.handleToggleSidebar}
                 footerContent={<Button view='extra'>Отправить</Button>}
             >
                 <Heading size='m'>

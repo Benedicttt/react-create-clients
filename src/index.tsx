@@ -5,9 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import PagesRoutes from "./routes/routes";
 
 ReactDOM.render(
-<React.StrictMode>
+<React.Fragment>
             <PagesRoutes />
-        </React.StrictMode>,
+        </React.Fragment>,
 
   document.getElementById('root')
 );
